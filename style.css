@@ -1,0 +1,77 @@
+body {
+  width: 80%;
+  margin: auto;
+}
+
+h1 {
+  font-family: fantasy;
+  font-size: 2.5vw;
+  display: flex;
+  display: inline-block;
+  margin-inline-start: auto;
+}
+
+.screenshot-container {
+  display: grid;
+  grid-template-columns: repeat(8, 1fr);
+  width: 100%;
+  overflow: hidden;
+}
+
+.diary-entry-wrapper {
+  width: 100%;
+  padding-bottom: 100%; /* Makes it square */
+  position: relative;
+  overflow: hidden;
+}
+
+.diary-entry {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  width: 250%; /* Zoom by increasing size */
+  height: 250%;
+  object-fit: cover;
+  transform: translate(-50%, -50%); /* Centering */
+}
+
+@media screen and (max-width: 700px) {
+  h1 {
+    font-size: 48px;
+  }
+  .screenshot-container {
+    grid-template-columns: repeat(4, 1fr);
+  }
+  #overlay-image {
+    position: absolute;
+    cursor: grab;
+    width: 300%; /* scale it up */
+  }
+  #close-button {
+    width: 15%;
+  }
+}
+
+#overlay {
+  display: none;
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: rgba(0, 0, 0, 0.5);
+}
+
+#overlay-image {
+  position: absolute;
+  cursor: grab;
+  width: 500%; /* scale it up */
+}
+
+#close-button {
+  position: absolute;
+
+  top: 20px;
+  left: 20px;
+  filter: drop-shadow(-0.25rem 0.15rem 0.25rem #4d4d4d);
+}
