@@ -118,9 +118,10 @@ document.addEventListener("DOMContentLoaded", function () {
 
   // Touch events
   overlayImage.addEventListener("touchstart", function (e) {
+    e.preventDefault();
     const touch = e.touches[0];
     initiateDrag(touch.clientX, touch.clientY);
-    document.addEventListener("touchmove", onTouchMove);
+    document.addEventListener("touchmove", onTouchMove, { passive: false });
     document.addEventListener("touchend", onTouchEnd);
   });
 
@@ -136,6 +137,7 @@ document.addEventListener("DOMContentLoaded", function () {
   }
 
   function onTouchMove(e) {
+    e.preventDefault();
     const touch = e.touches[0];
     updatePosition(touch.clientX, touch.clientY);
   }
