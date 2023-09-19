@@ -47,9 +47,6 @@ h1 {
     cursor: grab;
     width: 300%; /* scale it up */
   }
-  #close-button {
-    width: 15%;
-  }
 }
 
 #overlay {
@@ -70,7 +67,7 @@ h1 {
 
 #close-button {
   position: absolute;
-
+  width: 15%;
   top: 20px;
   left: 20px;
   filter: drop-shadow(-0.25rem 0.15rem 0.25rem #4d4d4d);
