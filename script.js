@@ -157,8 +157,8 @@ document.addEventListener("DOMContentLoaded", function () {
     if (y < window.innerHeight - rect.height)
       y = window.innerHeight - rect.height;
 
-    overlayImage.style.left = 1.25(x) + "px";
-    overlayImage.style.top = 1.25(y) + "px";
+    overlayImage.style.left = x + "px";
+    overlayImage.style.top = y + "px";
   }
 
   function onMouseUp() {
